@@ -55,12 +55,11 @@ const ReportForm = () => {
 
     try {
       const { data, error } = await supabase.from("reports").insert({
-        user_id: user.id,
-        category,
-        address: address.trim(),
-        description: description.trim() || null,
-        image_data: image,
-      }).select("id").single();
+  category,
+  address: address.trim(),
+  description: description.trim() || null,
+  image_url: image,
+}).select("id").single();
 
       if (error) throw error;
 
