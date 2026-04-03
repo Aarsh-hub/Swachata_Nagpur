@@ -41,7 +41,7 @@ const ReportForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!user) {
       toast.error("Please sign in to submit a report");
       navigate("/auth");
@@ -55,10 +55,11 @@ const ReportForm = () => {
 
     try {
       const { data, error } = await supabase.from("reports").insert({
+        user_id: user.id,
         category,
         address: address.trim(),
         description: description.trim() || null,
-        image_url: image,
+        image_data: image,
       }).select("id").single();
 
       if (error) throw error;
@@ -97,7 +98,7 @@ const ReportForm = () => {
           Upload Photo Evidence *
         </Label>
         <input ref={fileRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={handleFile} />
-        
+
         {image ? (
           <div className="relative rounded-xl overflow-hidden border border-border shadow-sm group">
             <img src={image} alt="Uploaded evidence" className="w-full h-64 object-cover" />
