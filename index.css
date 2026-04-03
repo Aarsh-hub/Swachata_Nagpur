@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 10% 97%;
+    --foreground: 200 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 12%;
+
+    --primary: 152 55% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 80% 56%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 150 10% 93%;
+    --muted-foreground: 200 10% 44%;
+
+    --accent: 152 30% 90%;
+    --accent-foreground: 152 55% 26%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 12% 88%;
+    --input: 150 12% 88%;
+    --ring: 152 55% 36%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 152 55% 36%;
+    --success-foreground: 0 0% 100%;
+    --info: 210 80% 52%;
+    --info-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 200 25% 8%;
+    --foreground: 150 10% 95%;
+    --card: 200 20% 12%;
+    --card-foreground: 150 10% 95%;
+    --popover: 200 20% 12%;
+    --popover-foreground: 150 10% 95%;
+    --primary: 152 55% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 80% 56%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 200 15% 18%;
+    --muted-foreground: 150 8% 60%;
+    --accent: 152 30% 20%;
+    --accent-foreground: 152 40% 80%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 200 15% 22%;
+    --input: 200 15% 22%;
+    --ring: 152 55% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
